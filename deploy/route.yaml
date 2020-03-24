@@ -1,13 +1,12 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  labels:
-    app: taxi-ui
-  name: taxi-ui
+  name: taxi
 spec:
   port:
-    targetPort: 8080-tcp
+    targetPort: http
   to:
     kind: Service
     name: taxi
     weight: 100
+  wildcardPolicy: None
